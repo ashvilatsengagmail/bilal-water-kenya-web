@@ -23,13 +23,13 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-water-blue/10 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-water-blue/10 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Droplets className="h-8 w-8 text-water-blue" />
-            <span className="text-xl font-bold text-earth-brown">
+            <span className="text-xl font-bold text-foreground">
               Bilal Water Drilling Co.
             </span>
           </div>
@@ -40,7 +40,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-earth-brown hover:text-water-blue transition-colors duration-200 font-medium"
+                className="text-foreground hover:text-water-blue transition-colors duration-200 font-medium"
               >
                 {item.label}
               </button>
@@ -57,7 +57,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-earth-brown p-2"
+              className="text-foreground p-2"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -72,7 +72,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-earth-brown hover:text-water-blue transition-colors duration-200 font-medium text-left py-2"
+                  className="text-foreground hover:text-water-blue transition-colors duration-200 font-medium text-left py-2"
                 >
                   {item.label}
                 </button>
