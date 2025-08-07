@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2 mt-3">
                   <MapPin className="h-4 w-4" />
-                  <span>Find us on Google Maps</span>
+                  <span>Available 24/7</span>
                 </div>
             </div>
           </div>

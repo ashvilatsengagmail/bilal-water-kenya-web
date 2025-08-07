@@ -20,6 +20,24 @@ const TestimonialsSection = () => {
       location: "Machakos County", 
       rating: 5,
       text: "Their solar pump installation has been working perfectly for 2 years now. Great technical expertise and ongoing support. Best decision we made for our farm."
+    },
+    {
+      name: "Grace Njeri",
+      location: "Murang'a County",
+      rating: 5,
+      text: "Outstanding work! They helped us drill a borehole for our hospital. Clean water access has improved patient care significantly. Very professional team."
+    },
+    {
+      name: "Peter Otieno",
+      location: "Kisumu County",
+      rating: 5,
+      text: "Fast and reliable service. Our hotel now has consistent water supply thanks to their expert drilling and pump installation. Excellent value for money."
+    },
+    {
+      name: "Mary Wambui",
+      location: "Nyeri County",
+      rating: 5,
+      text: "They completed our church borehole project efficiently. The community now has access to clean water. Professional, punctual, and affordable pricing."
     }
   ];
 
