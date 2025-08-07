@@ -23,17 +23,10 @@ const HeroSection = () => {
           Delivering affordable and efficient borehole drilling across counties
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex justify-center">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg">
             <Phone className="mr-2 h-5 w-5" />
             Get a Quote
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg"
-          >
-            View Our Work
           </Button>
         </div>
         

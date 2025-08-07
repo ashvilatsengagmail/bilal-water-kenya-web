@@ -4,19 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-earth-brown text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Bilal Water Drilling Co.</h3>
-            <p className="text-gray-300 mb-4">
-              Kenya's trusted partner for reliable water drilling solutions. 
-              Providing clean, sustainable water access across all counties.
-            </p>
-            <div className="flex items-center gap-2">
-              <MessageCircle className="h-4 w-4" />
-              <span className="text-sm">WhatsApp: +254 781 091551</span>
-            </div>
-          </div>
+          <div className="grid md:grid-cols-2 gap-8">
           
           {/* Services */}
           <div>
@@ -42,17 +30,21 @@ const Footer = () => {
                 <Mail className="h-4 w-4" />
                 <span>bilalwaterdrillingcompany@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span>Nairobi, Kenya</span>
-              </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Nairobi, Kenya</span>
+                </div>
+                <div className="flex items-center gap-2 mt-3">
+                  <MapPin className="h-4 w-4" />
+                  <span>Find us on Google Maps</span>
+                </div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-gray-600 mt-8 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400">&copy; 2025 Bilal Water Drilling Co. All rights reserved.</p>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <p className="text-gray-400 text-center">&copy; 2025 Bilal Water Drilling Co. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <a 
                 href="https://www.tiktok.com/@bilalwaterdrillingltd" 
@@ -66,7 +58,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.facebook.com/bilalwaterdrillingltd" 
+                href="https://www.facebook.com/share/19HAhdXJTD/"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
