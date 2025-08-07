@@ -23,25 +23,31 @@ const HeroSection = () => {
           Delivering affordable and efficient borehole drilling across counties
         </p>
         
+        {/* Call Button */}
         <div className="flex justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg">
-            <Phone className="mr-2 h-5 w-5" />
-            Get a Quote
-          </Button>
+          <a href="tel:0781091551">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Get a Quote
+            </Button>
+          </a>
         </div>
         
         {/* WhatsApp Quick Contact */}
         <div className="mt-8">
-          <Button 
-            variant="secondary" 
-            className="bg-green-600 hover:bg-green-700 text-white"
+          <a
+            href="https://wa.me/254781091551"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <MessageCircle className="mr-2 h-4 w-4" />
-            WhatsApp: +254 781 091551
-            <a href="https://wa.me/254781091551" target="_blank" rel="noopener noreferrer">
-  WhatsApp
-</a>
-          </Button>
+            <Button 
+              variant="secondary" 
+              className="bg-green-600 hover:bg-green-700 text-white"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp: +254 781 091551
+            </Button>
+          </a>
         </div>
       </div>
     </section>
