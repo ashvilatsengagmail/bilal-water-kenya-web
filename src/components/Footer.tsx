@@ -24,11 +24,15 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+254 781 091551</span>
+                <a href="tel:+254781091551" className="hover:text-white transition-colors">
+                  +254 781 091551
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>bilalwaterdrillingcompany@gmail.com</span>
+                <a href="mailto:bilalwaterdrillingcompany@gmail.com" className="hover:text-white transition-colors">
+                  bilalwaterdrillingcompany@gmail.com
+                </a>
               </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
