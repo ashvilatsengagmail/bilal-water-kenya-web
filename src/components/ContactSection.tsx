@@ -56,7 +56,7 @@ const ContactSection = () => {
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@bilalwater.co.ke</p>
+                    <p className="text-muted-foreground">bilalwaterdrillingcompany@gmail.com</p>
                   </div>
                 </div>
                 
