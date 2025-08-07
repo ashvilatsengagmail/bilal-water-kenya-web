@@ -38,6 +38,9 @@ const HeroSection = () => {
           >
             <MessageCircle className="mr-2 h-4 w-4" />
             WhatsApp: +254 781 091551
+            <a href="https://wa.me/254781091551" target="_blank" rel="noopener noreferrer">
+  WhatsApp
+</a>
           </Button>
         </div>
       </div>
