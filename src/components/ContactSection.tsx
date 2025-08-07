@@ -94,14 +94,20 @@ const ContactSection = () => {
                   <Clock className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold text-foreground">Working Hours</h3>
-                    <p className="text-muted-foreground">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                    <p className="text-muted-foreground">Always open</p>
                   </div>
                 </div>
                 
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp Us Now
-                </Button>
+                <a 
+                  href="https://wa.me/254781091551" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    WhatsApp Us Now
+                  </Button>
+                </a>
               </CardContent>
             </Card>
             
