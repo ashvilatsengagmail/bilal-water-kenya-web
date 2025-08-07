@@ -2,9 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 
 const ContactSection = () => {
+  const kenyanCounties = [
+    "Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", 
+    "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", 
+    "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", 
+    "Makueni", "Mandera", "Marsabit", "Meru", "Migori", "Mombasa", "Murang'a", 
+    "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", 
+    "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans Nzoia", 
+    "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"
+  ];
+
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +40,18 @@ const ContactSection = () => {
                 <Input placeholder="Phone Number" />
               </div>
               <Input placeholder="Email Address" />
-              <Input placeholder="County/Location" />
+              <Select>
+                <SelectTrigger className="bg-background">
+                  <SelectValue placeholder="Select County/Location" />
+                </SelectTrigger>
+                <SelectContent className="bg-background border shadow-lg z-50 max-h-60">
+                  {kenyanCounties.map((county) => (
+                    <SelectItem key={county} value={county} className="cursor-pointer hover:bg-accent">
+                      {county}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <Textarea 
                 placeholder="Tell us about your water drilling needs..."
                 className="min-h-[120px]"
