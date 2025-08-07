@@ -44,7 +44,7 @@ const HeroSection = () => {
             className="bg-green-600 hover:bg-green-700 text-white"
           >
             <MessageCircle className="mr-2 h-4 w-4" />
-            WhatsApp: +254 XXX XXX XXX
+            WhatsApp: +254 781 091551
           </Button>
         </div>
       </div>
