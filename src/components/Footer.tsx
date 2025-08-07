@@ -14,7 +14,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2">
               <MessageCircle className="h-4 w-4" />
-              <span className="text-sm">WhatsApp: +254 XXX XXX XXX</span>
+              <span className="text-sm">WhatsApp: +254 781 091551</span>
             </div>
           </div>
           
@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+254 XXX XXX XXX</span>
+                <span>+254 781 091551</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
