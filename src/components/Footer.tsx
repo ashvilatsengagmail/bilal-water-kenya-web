@@ -24,8 +24,8 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+254781091551" className="hover:text-white transition-colors">
-                  +254 781 091551
+                <a href="tel: 0781091551" className="hover:text-white transition-colors">
+                  0781 091551
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -37,10 +37,6 @@ const Footer = () => {
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
                   <span>Nairobi, Kenya</span>
-                </div>
-                <div className="flex items-center gap-2 mt-3">
-                  <MapPin className="h-4 w-4" />
-                  <span>Available 24/7</span>
                 </div>
             </div>
           </div>
