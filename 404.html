@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting…</title>
-    <meta http-equiv="refresh" content="0; url=/bilal-water-kenya-web/" />
-    <link rel="canonical" href="/bilal-water-kenya-web/" />
+    <meta http-equiv="refresh" content="0; url=./" />
+    <link rel="canonical" href="./" />
   </head>
   <body>
     <p>Redirecting to the homepage…</p>
     <script>
-      window.location.replace('/bilal-water-kenya-web/');
+      // Simple SPA fallback for GitHub Pages
+      (function() {
+        var target = './';
+        if (location.pathname && location.pathname.indexOf('/index.html') === -1) {
+          // Ensure redirect stays within current repo subpath
+          var parts = location.pathname.split('/');
+          if (parts.length > 2) {
+            // ['', 'user.github.io', 'repo', ...] or ['/repo', ...] when using project pages
+            target = parts.slice(0, 3).join('/') + '/';
+          }
+        }
+        location.replace(target);
+      })();
     </script>
   </body>
 </html>
