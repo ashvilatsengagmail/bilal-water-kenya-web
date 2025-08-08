@@ -9,8 +9,9 @@ const AboutSection = () => {
           {/* Image */}
           <div className="relative">
             <img 
-              src="/lovable-uploads/4a3ce73f-4fac-46e6-bf3c-0604c2711d08.png"
+              src={`${import.meta.env.BASE_URL}lovable-uploads/4a3ce73f-4fac-46e6-bf3c-0604c2711d08.png`}
               alt="Water drilling in Kenya"
+              loading="lazy"
               className="rounded-lg shadow-lg w-full h-[400px] object-cover"
             />
           </div>
