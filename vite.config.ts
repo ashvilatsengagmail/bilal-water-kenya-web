@@ -2,10 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-export default defineConfig({
-  base: "/bilal-water-kenya-web/",
-  ...
-});
+
+export default defineConfig(({ mode }) => ({
+  base: "/bilal-water-kenya-web/", // ✅ this is what tells Vite where the site is hosted
   server: {
     host: "::",
     port: 8080,
