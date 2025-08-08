@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-export default defineConfig(({ mode }) => ({
-  base: "./", // Relative base so the app works on any GitHub Pages repo subpath
+export default defineConfig({
+  base: "/bilal-water-kenya-web/", // Relative base so the app works on any GitHub Pages repo subpath
   server: {
     host: "::",
     port: 8080,
