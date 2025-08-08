@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/bilal-water-kenya-web/", // ✅ this is what tells Vite where the site is hosted
+  base: "./", // Relative base so the app works on any GitHub Pages repo subpath
   server: {
     host: "::",
     port: 8080,
