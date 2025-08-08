@@ -2,9 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-
-export default defineConfig(({ mode }) => ({
-  base: "/bilal-water-kenya-web/", // ✅ MUST MATCH your repo name
+export default defineConfig({
+  base: "/bilal-water-kenya-web/",
+  ...
+});
   server: {
     host: "::",
     port: 8080,
