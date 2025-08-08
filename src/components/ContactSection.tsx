@@ -1,19 +1,47 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Clock,
+} from "lucide-react";
 
 const ContactSection = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    e.currentTarget.submit();
+    setSubmitted(true);
+  };
+
   const kenyanCounties = [
-    "Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", 
-    "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", 
-    "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", 
-    "Makueni", "Mandera", "Marsabit", "Meru", "Migori", "Mombasa", "Murang'a", 
-    "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", 
-    "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans Nzoia", 
-    "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"
+    "Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa",
+    "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi",
+    "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos",
+    "Makueni", "Mandera", "Marsabit", "Meru", "Migori", "Mombasa", "Murang'a",
+    "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri",
+    "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans Nzoia",
+    "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot",
   ];
 
   return (
@@ -27,7 +55,7 @@ const ContactSection = () => {
             Ready to start your water project? Get in touch for a free consultation and quote
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card>
@@ -35,34 +63,59 @@ const ContactSection = () => {
               <CardTitle>Get a Free Quote</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <Input placeholder="Your Name" />
-                <Input placeholder="Phone Number" />
-              </div>
-              <Input placeholder="Email Address" />
-              <Select>
-                <SelectTrigger className="bg-background">
-                  <SelectValue placeholder="Select County/Location" />
-                </SelectTrigger>
-                <SelectContent className="bg-background border shadow-lg z-50 max-h-60">
-                  {kenyanCounties.map((county) => (
-                    <SelectItem key={county} value={county} className="cursor-pointer hover:bg-accent">
-                      {county}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Textarea 
-                placeholder="Tell us about your water drilling needs..."
-                className="min-h-[120px]"
-              />
-              <Button className="w-full bg-primary hover:bg-primary/90">
-                Send Message
-              </Button>
+              {submitted ? (
+                <div className="text-center py-12">
+                  <h3 className="text-2xl font-bold text-green-700">Thank you!</h3>
+                  <p className="text-muted-foreground mt-2">
+                    We’ve received your message and will get back to you shortly.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  action="https://formsubmit.co/bilalwaterdrillingcompany@gmail.com"
+                  method="POST"
+                  className="space-y-4"
+                >
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <Input name="name" placeholder="Your Name" required />
+                    <Input name="phone" placeholder="Phone Number" required />
+                  </div>
+                  <Input name="email" placeholder="Email Address" type="email" required />
+
+                  <Select name="county" required>
+                    <SelectTrigger className="bg-background">
+                      <SelectValue placeholder="Select County/Location" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border shadow-lg z-50 max-h-60">
+                      {kenyanCounties.map((county) => (
+                        <SelectItem key={county} value={county}>
+                          {county}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  <Textarea
+                    name="message"
+                    placeholder="Tell us about your water drilling needs..."
+                    className="min-h-[120px]"
+                    required
+                  />
+
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="true" />
+                  <input type="hidden" name="_next" value={typeof window !== "undefined" ? window.location.href : ""} />
+
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                    Send Message
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
-          
-          {/* Contact Information */}
+
+          {/* Contact Info */}
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
@@ -73,7 +126,7 @@ const ContactSection = () => {
                     <p className="text-muted-foreground">+254 781 091551</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 mb-4">
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
@@ -81,7 +134,7 @@ const ContactSection = () => {
                     <p className="text-muted-foreground">bilalwaterdrillingcompany@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 mb-6">
                   <MapPin className="h-6 w-6 text-primary" />
                   <div>
@@ -89,18 +142,18 @@ const ContactSection = () => {
                     <p className="text-muted-foreground">Nairobi, Kenya</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 mb-6">
                   <Clock className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold text-foreground">Working Hours</h3>
-                    <p className="text-muted-foreground">Always open</p>
+                    <p className="text-muted-foreground">Always Open</p>
                   </div>
                 </div>
-                
-                <a 
-                  href="https://wa.me/254781091551" 
-                  target="_blank" 
+
+                <a
+                  href="https://wa.me/254781091551"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
@@ -110,7 +163,7 @@ const ContactSection = () => {
                 </a>
               </CardContent>
             </Card>
-            
+
             {/* Service Areas */}
             <Card>
               <CardHeader>
