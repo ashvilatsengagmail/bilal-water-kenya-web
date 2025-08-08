@@ -12,6 +12,8 @@ const AboutSection = () => {
               src={`${import.meta.env.BASE_URL}lovable-uploads/4a3ce73f-4fac-46e6-bf3c-0604c2711d08.png`}
               alt="Water drilling in Kenya"
               loading="lazy"
+              decoding="async"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="rounded-lg shadow-lg w-full h-[400px] object-cover"
             />
           </div>

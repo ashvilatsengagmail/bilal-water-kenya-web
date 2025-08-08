@@ -1,11 +1,6 @@
 const ProjectsSection = () => {
   const projects = [
     {
-      image: "/lovable-uploads/6f2fdfc6-ea20-4fdb-ba7d-393b799d26d9.png",
-      location: "Nakuru County",
-      description: "Commercial borehole drilling project"
-    },
-    {
       image: "/lovable-uploads/4a3ce73f-4fac-46e6-bf3c-0604c2711d08.png",
       location: "Machakos County", 
       description: "Community water project"
@@ -52,6 +47,8 @@ const ProjectsSection = () => {
                   src={`${import.meta.env.BASE_URL}${project.image.startsWith('/') ? project.image.slice(1) : project.image}`}
                   alt={`Project in ${project.location}`}
                   loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

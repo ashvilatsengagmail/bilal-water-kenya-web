@@ -49,6 +49,8 @@ const ServicesSection = () => {
                   src={`${import.meta.env.BASE_URL}${service.image.startsWith('/') ? service.image.slice(1) : service.image}`}
                   alt={service.title}
                   loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
