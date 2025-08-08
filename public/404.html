@@ -10,18 +10,11 @@
   <body>
     <p>Redirecting to the homepage…</p>
     <script>
-      // Simple SPA fallback for GitHub Pages
-      (function() {
-        var target = './';
-        if (location.pathname && location.pathname.indexOf('/index.html') === -1) {
-          // Ensure redirect stays within current repo subpath
-          var parts = location.pathname.split('/');
-          if (parts.length > 2) {
-            // ['', 'user.github.io', 'repo', ...] or ['/repo', ...] when using project pages
-            target = parts.slice(0, 3).join('/') + '/';
-          }
-        }
-        location.replace(target);
+      // SPA fallback for GitHub Pages: redirect to repo root or site root
+      (function () {
+        var parts = location.pathname.split('/').filter(Boolean);
+        var base = parts.length ? '/' + parts[0] + '/' : '/';
+        location.replace(base);
       })();
     </script>
   </body>

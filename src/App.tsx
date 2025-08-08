@@ -8,12 +8,20 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Auto-detect basename for GitHub Pages project pages (works for user and project pages)
+const baseName = import.meta.env.DEV
+  ? "/"
+  : (() => {
+      const segments = window.location.pathname.split("/").filter(Boolean);
+      return segments.length ? `/${segments[0]}` : "/";
+    })();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={baseName}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
